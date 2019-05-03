@@ -9,9 +9,9 @@ Ubicación del proyecto en GITHub:
 https://ClRDAN/examendocker
 
 uw-imap es un servidor tipo xinetd, al instalarlo se crean los archivos de configuración pero tenemos que modificarlos para activar el servicio. Para ello creamos los archivos imap, ipop3 y pop3s, y configuramos la imagen para que sobreescriba estos archivos en /etc/xinetd.d/ al arrancar. También es necesario modificar PAM para permitir que los usuarios de correo se logueen, para ello automatizamos la copia del archivo pamimap en /etc/pam.d/imap al arrancar la imagen.
-Para arrancar el container en la máquina de AWS:
+Para arrancar el container en la máquina de AWS:  
 `docker run --rm --name popserver --hostname popserver --network popnet -p 110:110 -p 995:995 -p -d agalilea/m11aitor:latest`
-Previamente debemos haber creado la red popnet con 
+Previamente debemos haber creado la red popnet con   
 `docker network create popnet`
 Para que los clientes puedan acceder al servidor hace falta hacer dos cosas:
 * redirigir los puertos 110 y 995 (pop3 y pop3s) entre el contenedor y la máquina en la que corre, por eso en el comando de arranque indicamos -p 110:110 y -p 995:995.
