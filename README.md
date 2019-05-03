@@ -21,7 +21,7 @@ y ejecutamos el siguiente comando:
 `openssl x509 -CA cacrt.pem -CAkey cakey.pem -req -in perecsr.pem -days 365 -sha1 -extfile ca.conf -CAcreateserial \
  -out perecrt.pem`
 Para arrancar el container en la máquina de AWS:  
-`docker run --rm --name popserver --hostname popserver --network popnet -p 110:110 -p 995:995 -p -d agalilea/m11aitor:latest`
+`docker run --rm --name popserver --hostname popserver --network popnet -p 110:110 -p 995:995 -d agalilea/m11aitor:latest`
 Previamente debemos haber creado la red popnet con   
 `docker network create popnet`
 Para que los clientes puedan acceder al servidor hace falta hacer dos cosas:
