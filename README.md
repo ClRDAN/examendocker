@@ -38,4 +38,4 @@ Ahora ya deberíamos tener un servidor de correo funcionando, para comprobar que
     >LIST       #Lista los correos almacenados en el servidor
     >RETR 1     #recupera el primer mensaje
     >QUIT`
-* POP3S: pendiente    
+* POP3S: certificado en /etc/ssl/certs/imapd.pem|ipop3d.pem    
